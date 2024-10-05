@@ -1,15 +1,6 @@
 .onAttach <- function(...) {
 
-
-    for (pkg in c("tidyverse", "patchwork", "grid", "ggthemes", "sysfonts")) {
-        if (!requireNamespace(pkg, quietly = TRUE)) {
-            install.packages(pkg)
-        }
-    }
-
     library(tidyverse)
-    library(patchwork)
-    library(grid)
     library(ggthemes)
 
     update_geom_defaults("point", list(size = 1.6, color = ggmol::mol_colors(1)))
