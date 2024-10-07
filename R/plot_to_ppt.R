@@ -1,5 +1,6 @@
 plot_to_ppt <- function (plot = ggplot2::last_plot(), file_name = "plot.pptx",
           width = NULL, height = NULL){
+
     if (file_name %in% list.files()) {
         doc <- officer::read_pptx(file_name)
     }
