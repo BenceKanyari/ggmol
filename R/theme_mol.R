@@ -2,7 +2,7 @@ theme_mol <- function() {
     ggthemes::theme_calc() +
         theme(
             line = element_line(colour = "gray80"),
-            panel.border = element_blank(),
+            # panel.border = element_blank(),
             panel.background = element_rect(fill = "white", colour = NA),
             plot.background = element_rect(fill = "white", colour = NA),
             plot.margin = unit(c(1, 2, 1, 1), "lines"),
