@@ -15,11 +15,11 @@ theme_mol <- function() {
             plot.title = element_text(size = 18, face = "bold"),
             plot.subtitle = element_text(size = 14, margin = margin(3,3,4,3)),
             plot.caption = element_text(size = 10),
-            axis.title = element_text(size = 12),
+            # axis.title = element_text(size = 12),
             axis.text = element_text(size = 12),
             strip.text = element_text(size = 12),
             strip.background = element_rect(color = "grey60", fill = "grey95"),
-            legend.title = element_text(size = 12),
+            # legend.title = element_text(size = 12),
             legend.text = element_text(size = 12),
             axis.title = element_blank(),
             legend.title = element_blank()
