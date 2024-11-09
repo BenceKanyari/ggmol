@@ -21,5 +21,7 @@ theme_mol <- function() {
             strip.background = element_rect(color = "grey60", fill = "grey95"),
             legend.title = element_text(size = 12),
             legend.text = element_text(size = 12),
+            axis.title = element_blank(),
+            legend.title = element_blank()
         )
 }

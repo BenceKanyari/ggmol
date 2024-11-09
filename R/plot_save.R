@@ -1,5 +1,5 @@
 plot_save <- function(plot = ggplot2::last_plot(), file = "plot.png",
-                      aspect_ratio = c(2,3), logo = FALSE) {
+                      aspect_ratio = c(1,2), logo = FALSE) {
 
     add_logo <- function(){
 
@@ -72,7 +72,7 @@ plot_save <- function(plot = ggplot2::last_plot(), file = "plot.png",
     )
 
     if (any(pixel == 0)) {
-        message("Unrecognized aspect ratio. Defaulting to 2:3.")
+        message("Unrecognized aspect ratio. Defaulting to 1:2.")
         pixel <- c(6750, 4500)
     }
 
