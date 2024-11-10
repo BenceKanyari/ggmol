@@ -4,6 +4,5 @@ theme_col <- function() {
         axis.ticks.x = element_blank(),
         panel.grid.major.x = element_line(),
         panel.grid.major.y = element_blank(),
-    ) +
-        geom_vline(xintercept = 0)
+    )
 }
