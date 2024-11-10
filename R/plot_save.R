@@ -1,61 +1,42 @@
-plot_save <- function(plot = ggplot2::last_plot(), file = "plot.png",
-                      aspect_ratio = c(1,2), logo = FALSE) {
+plot_save <- function(file = "plot.png", plot = ggplot2::last_plot(),
+                      aspect_ratio = c(1,2), marker = FALSE) {
 
-    add_logo <- function(){
+    if (!str_ends(file, "\\.png")) {
+        file <- str_c(file, ".png")
+    }
 
-        # grid.lines(
-        #     x = c(0, 1),
-        #     y = 1,
-        #     gp = gpar(col = "#820000", lwd = 20)
-        # )
-
-        vp <- viewport(x = 0.8, y = 0.25, width = 0.25, height = 0.25, just = "right", default.units = "inch")
+    add_marker <- function(){
+        vp = grid::viewport(x = .1, y = 33, width = 0.25, height = 0.25, just = "right", default.units = "native")
         h <- sqrt(3)/2
-        a <- 0.25
+        a <- 0.35
         s <- 0.55
 
-        grid.polygon(
+        grid::grid.polygon(
             x = unit(c(0, 0, a*h), "inch"),
             y = unit(c(a, 0, a/2), "inch"),
-            gp = gpar(fill = "#DA3735", col = NA),
+            gp = grid::gpar(fill = "#DA3735", col = NA),
             vp = vp
         )
 
-        # Define the coordinates for the larger right upper triangle
-        grid.polygon(
+        grid::grid.polygon(
             x = unit(c(0, s*a*h/2, a*h), "inch"),
             y = unit(c(a, s*a*h*h, a/2), "inch"),
-            gp = gpar(fill = "#DA3735", col = NA),
+            gp = grid::gpar(fill = "#DA3735", col = NA),
             vp = vp
         )
 
-        # Define the coordinates for the smaller bottom left triangle
-        grid.polygon(
+        grid::grid.polygon(
             x = unit(c(0, 0, s*a*h/2), "inch"),
             y = unit(c(0, a, s*a*h*h), "inch"),
-            gp = gpar(fill = "#A02B2C", col = NA),
+            gp = grid::gpar(fill = "#A02B2C", col = NA),
             vp = vp
         )
 
-        # Define the coordinates for the smaller top left triangle
-        grid.polygon(
+        grid::grid.polygon(
             x = unit(c(0, s*a*h/2, a*h), "inch"),
             y = unit(c(0, s*a*h*h, a/2), "inch"),
-            gp = gpar(fill = "#52171A", col = NA),
+            gp = grid::gpar(fill = "#52171A", col = NA),
             vp = vp
-        )
-
-        grid.text(
-            "molgroup",
-            x = 0.8,
-            y = 0.25,
-            default.units = "inch",
-            just = "left",
-            gp = gpar(
-                col = "#DA3735",
-                fontsize = 22,
-                fontfamily = "Telegrafico"
-            )
         )
 
     }
@@ -79,9 +60,13 @@ plot_save <- function(plot = ggplot2::last_plot(), file = "plot.png",
     png(file, width = pixel[1], height = pixel[2], res = 720)
 
     print(plot)
-    if (logo) {
-        print(plot + theme(plot.margin = unit(c(1, 2, 2, 1), "lines")))
-        add_logo()
+
+    if (marker) {
+        print(plot + theme(
+            plot.background = element_rect(fill = "grey97"),
+            panel.background = element_rect(fill = "grey97"),
+        ))
+        add_marker()
     }
 
     dev.off()
