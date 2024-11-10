@@ -1,11 +1,12 @@
 theme_pub <- function() {
+    ggmol::theme_mol() +
     theme(
         line = element_line(linetype = 1, colour = "black"),
         rect = element_rect(fill = "white", linetype = 0, colour = NA),
         text = element_text(colour = "black"),
         title = element_text(size = rel(2)),
         axis.title = element_blank(),
-        axis.text = element_text(face = "bold", size = rel(1)),
+        axis.text = element_text(face = "bold", size = rel(1.1)),
         axis.text.x = element_text(colour = NULL),
         axis.text.y = element_text(colour = NULL),
         axis.ticks = element_line(colour = NULL),
