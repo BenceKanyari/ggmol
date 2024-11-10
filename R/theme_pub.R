@@ -26,6 +26,7 @@ theme_pub <- function() {
         panel.grid.minor = element_blank(),
         plot.title = element_text(hjust = 0, face = "bold"),
         plot.margin = unit(c(1, 1, 1, 1), "lines"),
-        strip.background = element_rect(fill = "grey95")
+        strip.background = element_blank(),
+        strip.text = element_text(color = "black", size = rel(1.3))
     )
 }
