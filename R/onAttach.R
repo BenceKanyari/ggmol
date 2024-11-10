@@ -13,7 +13,7 @@
     options(ggplot2.discrete.fill = ggmol::mol_colors())
 
     theme_set(
-        ggmol::theme_mol()
+        ggmol::theme_pub()
     )
     packageStartupMessage("Theme updated")
 }
