@@ -11,6 +11,7 @@ theme_col <- function(xbreaks = waiver(), xlimits = waiver(), expand_top = .5, l
         scale_x_continuous(breaks = xbreaks, limits = c(NA,NA), position = "top",
                            expand = expansion(mult = xexpand)),
         scale_y_discrete(expand = expansion(add = c(0, expand_top))),
-        ggmol::theme_col_basic()
+        ggmol::theme_col_basic(),
+        theme(strip.placement = "outside")
     )
 }
