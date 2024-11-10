@@ -1,8 +1,16 @@
-theme_col <- function() {
-    theme(
-        axis.line.x = element_blank(),
-        axis.ticks.x = element_blank(),
-        panel.grid.major.x = element_line(),
-        panel.grid.major.y = element_blank(),
+theme_col <- function(xbreaks = waiver(), xlimits = waiver(), expand_top = .5, left = FALSE) {
+
+    xexpand = c(0,.05)
+
+    if (left) {
+        xexpand = c(.05,0)
+    }
+
+    list(
+        geom_vline(xintercept = 0, linewidth = 1.25),
+        scale_x_continuous(breaks = xbreaks, limits = c(NA,NA), position = "top",
+                           expand = expansion(mult = xexpand)),
+        scale_y_discrete(expand = expansion(add = c(0, expand_top))),
+        ggmol::theme_col_basic()
     )
 }
