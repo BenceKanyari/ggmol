@@ -1,4 +1,4 @@
-theme_col <- function(xbreaks = waiver(), xlimits = waiver(), expand_top = .5, left = FALSE) {
+theme_col <- function(xbreaks = waiver(), xlimits = c(NA,NA), expand_top = .5, left = FALSE) {
 
     xexpand = c(0,.05)
 
