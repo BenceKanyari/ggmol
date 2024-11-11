@@ -5,12 +5,12 @@ plot_save <- function(file = "plot.png", plot = ggplot2::last_plot(),
         file <- str_c(file, ".png")
     }
 
-    add_marker <- function(win = win){
+    add_marker <- function(windows = win){
 
         just_set <- "left"
         y_set <- 46
       
-        if (!win) {
+        if (!windows) {
             just_set <- "right"
             y_set <- 33
         }
