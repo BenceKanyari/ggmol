@@ -8,7 +8,7 @@ plot_save <- function(file = "plot.png", plot = ggplot2::last_plot(),
     add_marker <- function(windows = TRUE){
 
         just_set <- "left"
-        y_set <- 46
+        y_set <- 340
       
         if (!windows) {
             just_set <- "right"
