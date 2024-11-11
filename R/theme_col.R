@@ -8,7 +8,7 @@ theme_col <- function(xbreaks = waiver(), xlimits = waiver(), expand_top = .5, l
 
     list(
         geom_vline(xintercept = 0, linewidth = 1),
-        scale_x_continuous(breaks = xbreaks, limits = c(NA,NA), position = "top",
+        scale_x_continuous(breaks = xbreaks, limits = xlimits, position = "top",
                            expand = expansion(mult = xexpand)),
         scale_y_discrete(expand = expansion(add = c(0, expand_top))),
         ggmol::theme_col_basic(),
