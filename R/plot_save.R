@@ -5,8 +5,17 @@ plot_save <- function(file = "plot.png", plot = ggplot2::last_plot(),
         file <- str_c(file, ".png")
     }
 
-    add_marker <- function(){
-        vp = grid::viewport(x = .1, y = 33, width = 0.25, height = 0.25, just = "right", default.units = "native")
+    add_marker <- function(win = TRUE){
+
+        just_set <- "left"
+        y_set <- 46
+      
+        if (!win) {
+            just_set <- "right"
+            y_set <- 33
+        }
+      
+        vp = grid::viewport(x = .1, y = y_set, width = 0.25, height = 0.25, just = just_set, default.units = "native")
         h <- sqrt(3)/2
         a <- 0.35
         s <- 0.55
