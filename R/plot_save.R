@@ -5,7 +5,7 @@ plot_save <- function(file = "plot.png", plot = ggplot2::last_plot(),
         file <- str_c(file, ".png")
     }
 
-    add_marker <- function(windows = win){
+    add_marker <- function(windows = TRUE){
 
         just_set <- "left"
         y_set <- 46
@@ -75,7 +75,7 @@ plot_save <- function(file = "plot.png", plot = ggplot2::last_plot(),
             plot.background = element_rect(fill = bg_color),
             panel.background = element_rect(fill = bg_color),
         ))
-        add_marker()
+        add_marker(win)
     }
 
     dev.off()
