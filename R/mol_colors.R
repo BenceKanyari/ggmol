@@ -2,7 +2,7 @@ mol_colors <- function(x = 1:12, palette = "mol") {
 
     if (palette == "mol") {
         mycolors <- c(
-            "#E22222", "#3D3D3D", "#A20000", "#9B9B9B", "#F28E8E","#D5D5D5",
+            "#E22222", "#2D2D2D", "#A20000", "#7F7F7F", "#F28E8E","#C0C0C0",
             "#228B22", "#A3C1E1", "#90EE90", "#3D5481", "#6B8E23", "#1113E1"
         )
     } else if (palette == "distinct") {

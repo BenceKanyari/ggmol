@@ -1,5 +1,5 @@
 plot_save <- function(file = "plot.png", plot = ggplot2::last_plot(),
-                      aspect_ratio = c(1,2), marker = FALSE) {
+                      aspect_ratio = c(1,2), marker = FALSE, bg_color = "#f0f2e9") {
 
     if (!str_ends(file, "\\.png")) {
         file <- str_c(file, ".png")
@@ -63,8 +63,8 @@ plot_save <- function(file = "plot.png", plot = ggplot2::last_plot(),
 
     if (marker) {
         print(plot + theme(
-            plot.background = element_rect(fill = "grey97"),
-            panel.background = element_rect(fill = "grey97"),
+            plot.background = element_rect(fill = bg_color),
+            panel.background = element_rect(fill = bg_color),
         ))
         add_marker()
     }
