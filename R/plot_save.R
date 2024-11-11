@@ -1,11 +1,11 @@
 plot_save <- function(file = "plot.png", plot = ggplot2::last_plot(),
-                      aspect_ratio = c(1,2), marker = FALSE, bg_color = "#f0f2e9") {
+                      aspect_ratio = c(1,2), marker = FALSE, bg_color = "#f0f2e9", win = TRUE) {
 
     if (!str_ends(file, "\\.png")) {
         file <- str_c(file, ".png")
     }
 
-    add_marker <- function(win = TRUE){
+    add_marker <- function(win = win){
 
         just_set <- "left"
         y_set <- 46
