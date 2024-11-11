@@ -1,5 +1,5 @@
 plot_save <- function(file = "plot.png", plot = ggplot2::last_plot(),
-                      aspect_ratio = c(1,2), marker = FALSE, bg_color = "#f0f2e9", win = TRUE) {
+                      aspect_ratio = c(1,2), marker = FALSE, bg_color = "grey97", win = TRUE) {
 
     if (!str_ends(file, "\\.png")) {
         file <- str_c(file, ".png")
@@ -9,12 +9,12 @@ plot_save <- function(file = "plot.png", plot = ggplot2::last_plot(),
 
         just_set <- "left"
         y_set <- 340
-      
+
         if (!windows) {
             just_set <- "right"
             y_set <- 33
         }
-      
+
         vp = grid::viewport(x = .1, y = y_set, width = 0.25, height = 0.25, just = just_set, default.units = "native")
         h <- sqrt(3)/2
         a <- 0.35
